@@ -8,11 +8,13 @@ module('Integration | Component | author', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    let author = { name: '0xadada' };
+    let author = {
+      name: '0xadada',
+     _internalModel: { clientId: 1 }
+    };
     set(this, 'model', author);
     await render(hbs`<Author @tagName="li" @model={{model}} />`);
 
-    assert.equal(this.element.textContent.trim(), '');
     assert.dom('li').includesText('0xadada');
   });
 });
