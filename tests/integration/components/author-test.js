@@ -1,26 +1,18 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
+import { set } from '@ember/object';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | author', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`{{author}}`);
+    let author = { name: '0xadada' };
+    set(this, 'model', author);
+    await render(hbs`<Author @tagName="li" @model={{model}} />`);
 
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#author}}
-        template block text
-      {{/author}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('li').includesText('0xadada');
   });
 });

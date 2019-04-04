@@ -1,7 +1,9 @@
 import DS from 'ember-data';
+import { attr } from '@ember-decorators/data';
 
-const { attr, Model } = DS;
+const { Model } = DS;
 
-export default Model.extend({
-  name: attr('string')
-});
+export default class AuthorModel extends Model {
+  @attr('string')
+  name
+}
