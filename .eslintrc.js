@@ -5,17 +5,14 @@ module.exports = {
     ecmaVersion: 2017,
     sourceType: 'module'
   },
-  plugins: [
-    'ember'
-  ],
-  extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended'
-  ],
+  plugins: ['ember', 'prettier'],
+  extends: ['eslint:recommended', 'plugin:ember/recommended'],
   env: {
     browser: true
   },
   rules: {
+    // prettier
+    'prettier/prettier': 2
   },
   overrides: [
     // node files
