@@ -1,7 +1,9 @@
 {{#if model.length}}
-  {{#each model as |author|}}
-    <Author @model={{author}} />
-  {{/each}}
+  <ol>
+    {{#each model as |author|}}
+      <Author @tagName="li" @model={{author}} />
+    {{/each}}
+  </ol>
 {{/if}}
 
 {{outlet}}

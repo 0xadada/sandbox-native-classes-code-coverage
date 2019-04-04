@@ -4,6 +4,7 @@ export default Route.extend({
   model() {
     const authorA = this.store.createRecord('author', { name: '0xADADA'});
     const authorB = this.store.createRecord('author', { name: '0xAEAEA'});
-    return [authorA, authorB]
+    const authorC = this.store.createRecord('author', { name: ''});
+    return [authorA, authorB, authorC]
   }
 });
