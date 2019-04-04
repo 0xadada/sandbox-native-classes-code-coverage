@@ -1,0 +1,7 @@
+{{#if model.length}}
+  {{#each model as |author|}}
+    <Author @model={{author}} />
+  {{/each}}
+{{/if}}
+
+{{outlet}}
